@@ -89,5 +89,6 @@ typedef void (^WACDSIndexerBatchCompletionHandler)(NSError * _Nullable error);
 - (NSManagedObject *_Nullable)objectFromUserActivity:(NSUserActivity *_Nonnull)userActivity;
 
 @property (nonatomic, copy, nullable) WACDSIndexerBatchCompletionHandler batchCompletionHandler;
+@property (nonatomic, strong) CSSearchableIndex   *searchableIndex;
 
 @end

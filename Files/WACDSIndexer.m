@@ -14,7 +14,6 @@
 @interface WACDSIndexer ()
 
 @property (nonatomic, strong) NSMutableDictionary *mappings;
-@property (nonatomic, strong) CSSearchableIndex   *searchableIndex;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
@@ -43,7 +42,7 @@
     
     self = [super init];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:managedObjectContext];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:nil];
         
         self->_managedObjectContext = managedObjectContext;
         
